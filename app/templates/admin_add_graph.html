@@ -1,0 +1,171 @@
+{% extends "admin_layout.html" %}
+
+{% block admin %}
+<div>
+    <form method="POST" action="{{ url_for("admin_add_graph") }}">
+        {{ form.hidden_tag() }}
+        <fieldset>
+            <legend class="h4">{{ title }}</legend> 
+
+                <div class="input-group mb-3">
+                    {{ form.name.label(class="input-group-text col-4") }}
+                    {{ form.name(class="form-control") }}
+                    {% if form.name.errors %}
+                        {{ form.name() }}
+                        <div>
+                            {% for error in form.name.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+
+                <div class="input-group mb-3">
+                    {{ form.user_email.label(class="input-group-text col-4") }}
+                    {{ form.user_email(class="form-control") }}
+                    {% if form.user_email.errors %}
+                        {{ form.user_email() }}
+                        <div>
+                            {% for error in form.user_email.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+
+                <div class="input-group mb-3">
+                    {{ form.airtable_api_key.label(class="input-group-text col-4") }}
+                    {{ form.airtable_api_key(class="form-control") }}
+                    {% if form.airtable_api_key.errors %}
+                        {{ form.airtable_api_key() }}
+                        <div>
+                            {% for error in form.airtable_api_key.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+
+                <div class="input-group mb-3">
+                    {{ form.airtable_base_id.label(class="input-group-text col-4") }}
+                    {{ form.airtable_base_id(class="form-control") }}
+                    {% if form.airtable_base_id.errors %}
+                        {{ form.airtable_base_id() }}
+                        <div>
+                            {% for error in form.airtable_base_id.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+
+                <div class="input-group mb-3">
+                    {{ form.airtable_states_table_id.label(class="input-group-text col-4") }}
+                    {{ form.airtable_states_table_id(class="form-control") }}
+                    {% if form.airtable_states_table_id.errors %}
+                        {{ form.airtable_states_table_id() }}
+                        <div>
+                            {% for error in form.airtable_states_table_id.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+
+                <div class="input-group mb-3">
+                    {{ form.airtable_states_table_view_id.label(class="input-group-text col-4") }}
+                    {{ form.airtable_states_table_view_id(class="form-control") }}
+                    {% if form.airtable_states_table_view_id.errors %}
+                        {{ form.airtable_states_table_view_id() }}
+                        <div>
+                            {% for error in form.airtable_states_table_view_id.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+
+                <div class="input-group mb-3">
+                    {{ form.airtable_transitions_table_id.label(class="input-group-text col-4") }}
+                    {{ form.airtable_transitions_table_id(class="form-control") }}
+                    {% if form.airtable_transitions_table_id.errors %}
+                        {{ form.airtable_transitions_table_id() }}
+                        <div>
+                            {% for error in form.airtable_transitions_table_id.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+
+                <div class="input-group mb-3">
+                    {{ form.airtable_transition_table_view_id.label(class="input-group-text col-4") }}
+                    {{ form.airtable_transition_table_view_id(class="form-control") }}
+                    {% if form.airtable_transition_table_view_id.errors %}
+                        {{ form.airtable_transition_table_view_id() }}
+                        <div>
+                            {% for error in form.airtable_transition_table_view_id.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+
+                <div class="input-group mb-3">
+                    {{ form.airtable_forms_table_id.label(class="input-group-text col-4") }}
+                    {{ form.airtable_forms_table_id(class="form-control") }}
+                    {% if form.airtable_forms_table_id.errors %}
+                        {{ form.airtable_forms_table_id() }}
+                        <div>
+                            {% for error in form.airtable_forms_table_id.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+
+                <div class="input-group mb-3">
+                    {{ form.airtable_forms_table_view_id.label(class="input-group-text col-4") }}
+                    {{ form.airtable_forms_table_view_id(class="form-control") }}
+                    {% if form.airtable_forms_table_view_id.errors %}
+                        {{ form.airtable_forms_table_view_id() }}
+                        <div>
+                            {% for error in form.airtable_forms_table_view_id.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+
+                <div class="input-group mb-3">
+                    {{ form.airtable_config_table_id.label(class="input-group-text col-4") }}
+                    {{ form.airtable_config_table_id(class="form-control") }}
+                    {% if form.airtable_config_table_id.errors %}
+                        {{ form.airtable_config_table_id() }}
+                        <div>
+                            {% for error in form.airtable_config_table_id.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+
+                <div class="input-group mb-3">
+                    {{ form.airtable_config_table_view_id.label(class="input-group-text col-4") }}
+                    {{ form.airtable_config_table_view_id(class="form-control") }}
+                    {% if form.airtable_config_table_view_id.errors %}
+                        {{ form.airtable_config_table_view_id() }}
+                        <div>
+                            {% for error in form.airtable_config_table_view_id.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+        </fieldset>
+        <div>
+            {{ form.submit(class="btn btn-outline-primary btn-sm") }}
+        </div>
+    </form>
+</div>
+{% endblock admin %}

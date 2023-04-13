@@ -1,0 +1,33 @@
+html{
+    height: 100%;
+    background-color: #40E0D0;
+}
+
+body {
+    height: 90%;
+    background-color: #40E0D0;
+}
+
+main{
+    height: 100%;
+}
+
+
+.fill-height { 
+    flex-grow: 1; 
+    width: 100%; 
+}
+
+.border {
+    border: 1px solid; 
+    border-color: #ddd; 
+}
+
+.card-image {
+    overflow:hidden;
+    height:30%;
+}
+
+.card-general {
+    box-shadow: 5px 5px 5px black;
+}

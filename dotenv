@@ -1,0 +1,8 @@
+SECRET_KEY='SAMPLE_SECRET_KEY'
+APP_PREFIX='/portal'
+
+#DB_URI='sqlite+pysqlite:///:memory:'
+DB_URI='sqlite+pysqlite:///db'
+
+REDIS_HOST='redis'
+REDIS_PORT='6379'

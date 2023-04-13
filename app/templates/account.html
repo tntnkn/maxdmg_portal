@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="d-flex h-100 w-100 align-items-center justify-content-center">
+<div class="card col col-md-4 h-50">
+  <div class="card-body">
+    <h5 class="card-title">Профиль</h5>
+    <p class="card-text">Здравствуйте, {{ user_info.name }}!</p>
+    <hr>
+    <p>Если хотите сменить пароль, <a href="{{ url_for("reset_password_user_logged_in") }}"class="fw-light text-reset text-decoration-none">нажмите сюда</a>.</p>
+  </div>
+</div>
+</div>
+{% endblock content %}

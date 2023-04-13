@@ -1,0 +1,75 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="row row-cols-1 row-cols-md-5 g-4 pt-3 d-flex justify-content-center">
+
+  <div class="col h-50">
+    <div class="card h-100 card-general">
+        <div class="card-image">
+        <img src="{{ url_for("static", filename="img/instrument_card_graph.jpg") }}" 
+           class="card-img-top" 
+           alt="Imgage if a graph">
+        </div>
+      <div class="card-body">
+        <h5 class="card-title">Визуализатор</h5>
+        <p class="card-text">В этом инструменте можно наглядно посмотреть, как пользователь может переходить от состояния к состоянию, а также на условия этих переходов. Полезно как для разработки, так и для последующего анализа структуры генератора.</p>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">
+            <a class="btn btn-outline-primary btn-sm" 
+               href="{{ url_for('graph.graph') }}">
+                Перейти
+            </a>
+        </small>
+      </div>
+    </div>
+  </div>
+
+  <div class="col h-50">
+    <div class="card h-100 card-general">
+        <div class="card-image">
+        <img src="{{ url_for("static", filename="img/instrument_card_metagenerator.jpg") }}" 
+           class="card-img-top" 
+           alt="Image of a documents shelf">
+        </div>
+      <div class="card-body">
+        <h5 class="card-title">Метагенератор</h5>
+        <p class="card-text">Этот инструмент предназначен для описания генератора документов -- начиная от описания форм, с которыми взаимодействует пользователь, заканчивая условиями переходов от одной формы к другой. На данный момент это -- сторонний сервис.</p>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">
+            <a class="btn btn-outline-primary btn-sm" 
+               href="https://airtable.com/">
+                Перейти
+            </a>
+        </small>
+      </div>
+    </div>
+  </div>
+
+  {% if auth.UserIsAuth() and auth.UserIsAdmin() %}
+  <div class="col h-50">
+    <div class="card h-100 card-general">
+        <div class="card-image">
+        <img src="{{ url_for("static", filename="img/instrument_card_admin.jpg") }}" 
+           class="card-img-top" 
+           alt="Imgage if a graph">
+        </div>
+      <div class="card-body">
+        <h5 class="card-title">Админка</h5>
+        <p class="card-text">Этот инструмент -- панель админа сайта.</p>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">
+            <a class="btn btn-outline-primary btn-sm" 
+                href="{{ url_for('admin') }}">
+                Перейти
+            </a>
+        </small>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+
+</div>
+{% endblock content %}

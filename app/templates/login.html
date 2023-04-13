@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="align-self-center d-flex justify-content-center col-12">
+<div class="card bg-light col-md-3 h-50">
+    <form method="POST" action="{{ url_for("login") }}">
+        {{ form.hidden_tag() }}
+        <fieldset class="pt-3 pb-3 ps-3 pe-3">
+            <legend class="card-header">{{ title }}</legend> 
+                <div>
+                    {{ form.email.label(class="form-label") }}
+                    {{ form.email(class="form-control") }}
+                    {% if form.email.errors %}
+                        {{ form.email() }}
+                        <div>
+                            {% for error in form.email.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+
+                <div>
+                    {{ form.password.label(class="form-label") }}
+                    {{ form.password(class="form-control") }}
+                    {% if form.password.errors %}
+                        {{ form.password() }}
+                        <div>
+                            {% for error in form.password.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+        </fieldset>
+        <div class="ps-3 pb-3 border">
+            {{ form.submit(class="btn btn-outline-primary btn-sm") }}
+            <small>
+            <a class="text-muted small ps-2" 
+u              href="{{ url_for('request_reset_password') }}">
+                Жми, если пароль забыт (пока не работает)
+            </a>
+            </small>
+        </div>
+    </form>
+</div>
+</div>
+{% endblock content %}
